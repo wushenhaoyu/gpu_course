@@ -1,0 +1,8 @@
+{
+  "model": "depthwise_medium",
+  "synthetic_seed": 20260917,
+  "trained": false,
+  "parameters": 762,
+  "reference": "PyTorch CPU FP32; all layers checked",
+  "input_sha256": "ad81e8e9373938ce2861be720e1b015c4a89eaca4474527a9ff7cdc8a766229c"
+}

@@ -1,0 +1,449 @@
+{
+  "simulator_results": [
+    {
+      "model": "mlp",
+      "version": "1.0-correctness",
+      "program_seconds": 1.8334621999965748,
+      "exit_code": 0,
+      "samples": 10,
+      "passed": true,
+      "cycles": 369940,
+      "accuracy": 1.0,
+      "predictions": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "instructions": 277090,
+      "simulated_seconds": 0.00036994,
+      "virtual_frequency_ghz": 1.0,
+      "simulated_time_source": "cycles / 1 GHz; original specification for correctness baseline, recorded configuration for other measured versions"
+    },
+    {
+      "model": "mlp",
+      "version": "1.1",
+      "program_seconds": 664.0171044000017,
+      "exit_code": 0,
+      "samples": 10,
+      "passed": true,
+      "cycles": 113043915,
+      "accuracy": 1.0,
+      "predictions": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "instructions": 277090,
+      "simulated_seconds": 0.113043915,
+      "virtual_frequency_ghz": 1.0,
+      "simulated_time_source": "cycles / 1 GHz; original specification for correctness baseline, recorded configuration for other measured versions"
+    },
+    {
+      "model": "cnn",
+      "version": "1.0-correctness",
+      "program_seconds": 7.34611820000282,
+      "exit_code": 0,
+      "samples": 10,
+      "passed": true,
+      "cycles": 1224380,
+      "accuracy": 1.0,
+      "predictions": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "instructions": 9619210,
+      "simulated_seconds": 0.00122438,
+      "virtual_frequency_ghz": 1.0,
+      "simulated_time_source": "cycles / 1 GHz; original specification for correctness baseline, recorded configuration for other measured versions"
+    },
+    {
+      "model": "cnn",
+      "version": "1.1",
+      "program_seconds": 1149.3026607999927,
+      "exit_code": 0,
+      "samples": 10,
+      "passed": true,
+      "cycles": 192774640,
+      "accuracy": 1.0,
+      "predictions": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "instructions": 9619210,
+      "simulated_seconds": 0.19277464,
+      "virtual_frequency_ghz": 1.0,
+      "simulated_time_source": "cycles / 1 GHz; original specification for correctness baseline, recorded configuration for other measured versions"
+    },
+    {
+      "model": "tinyvgg",
+      "version": "1.0-correctness",
+      "program_seconds": 43.970719000004465,
+      "exit_code": 0,
+      "samples": 10,
+      "passed": true,
+      "cycles": 5433840,
+      "accuracy": 1.0,
+      "predictions": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "instructions": 68773130,
+      "simulated_seconds": 0.00543384,
+      "virtual_frequency_ghz": 1.0,
+      "simulated_time_source": "cycles / 1 GHz; original specification for correctness baseline, recorded configuration for other measured versions"
+    },
+    {
+      "model": "tinyvgg",
+      "version": "1.1",
+      "program_seconds": 3775.9639548999985,
+      "exit_code": 0,
+      "samples": 10,
+      "passed": true,
+      "cycles": 501691267,
+      "accuracy": 1.0,
+      "predictions": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "instructions": 68773130,
+      "simulated_seconds": 0.501691267,
+      "virtual_frequency_ghz": 1.0,
+      "simulated_time_source": "cycles / 1 GHz; original specification for correctness baseline, recorded configuration for other measured versions"
+    }
+  ],
+  "gpu_accuracy": {
+    "mlp": {
+      "full_70000": {
+        "accuracy": 0.9169142857142857,
+        "ce": 0.23522238433361053,
+        "per_class_recall": [
+          0.8775714285714286,
+          0.9888571428571429,
+          0.8051428571428572,
+          0.9464285714285714,
+          0.8242857142857143,
+          0.9897142857142858,
+          0.807,
+          0.9725714285714285,
+          0.9807142857142858,
+          0.9768571428571429
+        ],
+        "min_class_recall": 0.8051428571428572
+      },
+      "official_test_10000": {
+        "accuracy": 0.8829,
+        "ce": 0.380840003490448,
+        "per_class_recall": [
+          0.817,
+          0.973,
+          0.759,
+          0.917,
+          0.779,
+          0.966,
+          0.735,
+          0.963,
+          0.959,
+          0.961
+        ],
+        "min_class_recall": 0.735
+      },
+      "evaluation_seconds": 0.8076982999918982,
+      "batch": 128,
+      "backend": "handwritten CUDA; no NVIDIA math libraries",
+      "full_set_order": "official train 60000 then official test 10000",
+      "reference_test_prediction_agreement": 1.0
+    },
+    "cnn": {
+      "full_70000": {
+        "accuracy": 0.9611714285714286,
+        "ce": 0.111861452460289,
+        "per_class_recall": [
+          0.9202857142857143,
+          0.9952857142857143,
+          0.9125714285714286,
+          0.9845714285714285,
+          0.9535714285714286,
+          0.9978571428571429,
+          0.8837142857142857,
+          0.9808571428571429,
+          0.9968571428571429,
+          0.9861428571428571
+        ],
+        "min_class_recall": 0.8837142857142857
+      },
+      "official_test_10000": {
+        "accuracy": 0.9238,
+        "ce": 0.23105259239673615,
+        "per_class_recall": [
+          0.855,
+          0.985,
+          0.856,
+          0.954,
+          0.895,
+          0.989,
+          0.783,
+          0.965,
+          0.983,
+          0.973
+        ],
+        "min_class_recall": 0.783
+      },
+      "evaluation_seconds": 1.2267160000046715,
+      "batch": 128,
+      "backend": "handwritten CUDA; no NVIDIA math libraries",
+      "full_set_order": "official train 60000 then official test 10000",
+      "reference_test_prediction_agreement": 1.0
+    },
+    "tinyvgg": {
+      "full_70000": {
+        "accuracy": 0.9455142857142858,
+        "ce": 0.16616587340831757,
+        "per_class_recall": [
+          0.9015714285714286,
+          0.9898571428571429,
+          0.9132857142857143,
+          0.9571428571428572,
+          0.9444285714285714,
+          0.9888571428571429,
+          0.8192857142857143,
+          0.984,
+          0.9944285714285714,
+          0.9622857142857143
+        ],
+        "min_class_recall": 0.8192857142857143
+      },
+      "official_test_10000": {
+        "accuracy": 0.9321,
+        "ce": 0.20676083862781525,
+        "per_class_recall": [
+          0.886,
+          0.985,
+          0.892,
+          0.94,
+          0.932,
+          0.982,
+          0.776,
+          0.982,
+          0.994,
+          0.952
+        ],
+        "min_class_recall": 0.776
+      },
+      "evaluation_seconds": 6.219729599994025,
+      "batch": 128,
+      "backend": "handwritten CUDA; no NVIDIA math libraries",
+      "full_set_order": "official train 60000 then official test 10000",
+      "reference_test_prediction_agreement": 1.0
+    }
+  },
+  "selection": {
+    "method": "first official test index of each class; no prediction-based selection",
+    "indices": [
+      19,
+      2,
+      1,
+      13,
+      6,
+      8,
+      4,
+      9,
+      18,
+      0
+    ],
+    "labels": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ]
+  },
+  "weight_sources": {
+    "mlp": {
+      "repo": "sadhaklal/mlp-fashion-mnist",
+      "revision": "d6b7c50ffcc0f5d2ec5571330ccf722cf0b9d95f",
+      "files": {
+        "README.md": {
+          "url": "https://huggingface.co/sadhaklal/mlp-fashion-mnist/resolve/d6b7c50ffcc0f5d2ec5571330ccf722cf0b9d95f/README.md",
+          "sha256": "f6490227905a06bbb81b102e9a89297f00e61721826110ada210adb472705469",
+          "bytes": 2314
+        },
+        "model.safetensors": {
+          "url": "https://huggingface.co/sadhaklal/mlp-fashion-mnist/resolve/d6b7c50ffcc0f5d2ec5571330ccf722cf0b9d95f/model.safetensors",
+          "sha256": "6b39ae5e935c9c5d69eaaae8f74c41f999a402ab5c507334f6f5d6e93f8153cc",
+          "bytes": 1066896
+        }
+      }
+    },
+    "cnn": {
+      "repo": "wasif-mlops/fashion-mnist",
+      "revision": "99058b9822796b7bc471deb50b3cdbc7e3334f83",
+      "files": {
+        "README.md": {
+          "url": "https://huggingface.co/wasif-mlops/fashion-mnist/resolve/99058b9822796b7bc471deb50b3cdbc7e3334f83/README.md",
+          "sha256": "d09c5886d0d2ee066d36397aec50cc728e8c3e5cb3c11f36391a8254607a3850",
+          "bytes": 4001
+        },
+        "model_def.py": {
+          "url": "https://huggingface.co/wasif-mlops/fashion-mnist/resolve/99058b9822796b7bc471deb50b3cdbc7e3334f83/model_def.py",
+          "sha256": "cd08e039440f3ee6a31a1f6066acef9a225393185bdef1bdce2cf7621d75fc35",
+          "bytes": 2200
+        },
+        "app.py": {
+          "url": "https://huggingface.co/wasif-mlops/fashion-mnist/resolve/99058b9822796b7bc471deb50b3cdbc7e3334f83/app.py",
+          "sha256": "1f1620744b32be237caa5e7ddeefc2401634f8ee7518dab01d60e01722a37c6e",
+          "bytes": 3171
+        },
+        "model.pth": {
+          "url": "https://huggingface.co/wasif-mlops/fashion-mnist/resolve/99058b9822796b7bc471deb50b3cdbc7e3334f83/model.pth",
+          "sha256": "c4aa1cd0960db8a2b6d50c9c53b4eead299ddebebcf333c1217914aab18dd41d",
+          "bytes": 1689256
+        }
+      }
+    },
+    "tinyvgg": {
+      "repo": "SatvikPraveen/FashionMNIST-Analysis",
+      "revision": "97cfc658264db29bf3bcb8a6cb330c89069223a7",
+      "files": {
+        "README.md": {
+          "url": "https://raw.githubusercontent.com/SatvikPraveen/FashionMNIST-Analysis/97cfc658264db29bf3bcb8a6cb330c89069223a7/README.md",
+          "sha256": "29315da1a9f446a75ecafd1892937c15f4eb27d0e29346f750ade2a9031f4bc7",
+          "bytes": 16947
+        },
+        "LICENSE": {
+          "url": "https://raw.githubusercontent.com/SatvikPraveen/FashionMNIST-Analysis/97cfc658264db29bf3bcb8a6cb330c89069223a7/LICENSE",
+          "sha256": "8a245ef77565099aab906b41ed903489370fc6ece66a962518229ecc086fddd2",
+          "bytes": 1066
+        },
+        "models/best_model_weights/best_model_info.json": {
+          "url": "https://raw.githubusercontent.com/SatvikPraveen/FashionMNIST-Analysis/97cfc658264db29bf3bcb8a6cb330c89069223a7/models/best_model_weights/best_model_info.json",
+          "sha256": "eb75d577124ba63b44cb3543be88b2320263d82267677631a2d6c0692162fd73",
+          "bytes": 223
+        },
+        "models/best_model_weights/best_model_weights.pth": {
+          "url": "https://raw.githubusercontent.com/SatvikPraveen/FashionMNIST-Analysis/97cfc658264db29bf3bcb8a6cb330c89069223a7/models/best_model_weights/best_model_weights.pth",
+          "sha256": "15e82886ef338e79cf02ca4f8269a8a2b93906852abb85966ffd11e0528db7b8",
+          "bytes": 575765
+        },
+        "src/models/architectures.py": {
+          "url": "https://raw.githubusercontent.com/SatvikPraveen/FashionMNIST-Analysis/97cfc658264db29bf3bcb8a6cb330c89069223a7/src/models/architectures.py",
+          "sha256": "2501ddf0a7e1274a14e7feb8c53e70e47eb6cb08af3922d09130c100f0b81a73",
+          "bytes": 10682
+        },
+        "src/data/dataset.py": {
+          "url": "https://raw.githubusercontent.com/SatvikPraveen/FashionMNIST-Analysis/97cfc658264db29bf3bcb8a6cb330c89069223a7/src/data/dataset.py",
+          "sha256": "ca4f4d57f47a2b84ed6c7f6fc8540e20aa62c4ed16189344f090648401cc0e05",
+          "bytes": 9292
+        },
+        "src/serving/inference.py": {
+          "url": "https://raw.githubusercontent.com/SatvikPraveen/FashionMNIST-Analysis/97cfc658264db29bf3bcb8a6cb330c89069223a7/src/serving/inference.py",
+          "sha256": "885bf8dafedd657a76adc3b1ce56c63bf868faf67ff02879c16e0cbbbc1bb9e5",
+          "bytes": 11797
+        },
+        "src/data/augmentation.py": {
+          "url": "https://raw.githubusercontent.com/SatvikPraveen/FashionMNIST-Analysis/97cfc658264db29bf3bcb8a6cb330c89069223a7/src/data/augmentation.py",
+          "sha256": "d04bd512f168d765cac052e22308287cb43d0aa1e7b15be7477409a509dc925b",
+          "bytes": 18380
+        },
+        "config.yaml": {
+          "url": "https://raw.githubusercontent.com/SatvikPraveen/FashionMNIST-Analysis/97cfc658264db29bf3bcb8a6cb330c89069223a7/config.yaml",
+          "sha256": "05b92f8e5aab356a68054471962c6313cd902dfdaa8885e2fb09c441b33ec504",
+          "bytes": 3240
+        }
+      }
+    }
+  },
+  "build": {
+    "1.0-correctness": {
+      "runner_sha256": "f98b4d6375946d60bd095dede02b2e92f1ea8f2b85c74f4db62452af2831cb31",
+      "executable_sha256": "a84d424235bbbc656c2887ddeb579877d414fec5a6e753ffcd33bc71f6f40683",
+      "source_hashes": {
+        "func\\func_sim.cpp": "dd23704e83d2172a413ba044889eb8595856d07c48e60de4047a9f0905ffa6f7",
+        "func\\func_sim.hpp": "db1b200a0812a4fe137958c4f6be31618a4207f25dc66ebc264d94354362077a",
+        "func\\main.cpp": "67b77e9f500ec38d91a325cd4d1354ea935dfbc0705dc8d6edeb83e38070aa7a",
+        "isa\\ntas_enc.hpp": "46b70ab03e5759ee8d177e68d7a7e9cc7ac8ac4c8f2cefd6ac0e08d98aa6c06f",
+        "isa\\ntisa.hpp": "9e545da2121782cf00e33afa5bb940310b1df153631038e9e160b507fc82f8ee",
+        "tests\\t_decode.cpp": "4817712bf7faada705c55450e352899f94eb7c457161afa9385aebf3dae962f6",
+        "tests\\t_diverge.cpp": "27f7de8005131f3cfd12300173654f526f59ef39a7d6168dcf06abc264853470",
+        "tests\\t_saxpy.cpp": "b4488825021f12584ea3fd6e66b9b44358115bf06ee90dde530480791cbb349c",
+        "timing\\cycle_sim.cpp": "6190bb197da83c754e0fa056524b9fe381241cd9332528ac50ae225f731b8166",
+        "timing\\cycle_sim.hpp": "85857e0de716020141f8a78fa2bd3d5c61a3d7c35266eee1038b2d073f10a7e9",
+        "timing\\main.cpp": "da8fff9c869ed33f0cebbed9fd9aa8c875117270de62aad46b3c9eeb7ff37447"
+      }
+    },
+    "1.1": {
+      "runner_sha256": "f98b4d6375946d60bd095dede02b2e92f1ea8f2b85c74f4db62452af2831cb31",
+      "executable_sha256": "8037af1e88df3fdd95e7bcf461d50be78be1a8709a2f88649f36b78f2a4e0020",
+      "source_hashes": {
+        "func\\func_sim.cpp": "e51bab329c9907e61f6819f6f659534504a1c6c424afcd6c31a25e3e34199fd0",
+        "func\\func_sim.hpp": "76ccba23f5e3dbd5d744b3c65ba5f4fd7a4ed4998400e82fd931ba9e8ece183e",
+        "func\\main.cpp": "67b77e9f500ec38d91a325cd4d1354ea935dfbc0705dc8d6edeb83e38070aa7a",
+        "isa\\ntas_enc.hpp": "46b70ab03e5759ee8d177e68d7a7e9cc7ac8ac4c8f2cefd6ac0e08d98aa6c06f",
+        "isa\\ntisa.hpp": "bdbe9522edf8277f1dd1d6a14522dae95e327bafa8076ab2416735140e7d581c",
+        "tests\\model_runner.cpp": "f98b4d6375946d60bd095dede02b2e92f1ea8f2b85c74f4db62452af2831cb31",
+        "tests\\t_decode.cpp": "4817712bf7faada705c55450e352899f94eb7c457161afa9385aebf3dae962f6",
+        "tests\\t_diverge.cpp": "b6199ed85d422f191735ac3d8c51c24881988732cf56018d1cd13f8b2918bb43",
+        "tests\\t_repairs.cpp": "99fa0b946327aa7cfb0f6adfa4e4c52eeeefe6cd76348b9e2e63b03d7eb0d0f9",
+        "tests\\t_runtime_v2.cpp": "d02c88b58e87ad0e9776672a0343055e4ecc23e509da6497aef54e7d8b4325f0",
+        "tests\\t_saxpy.cpp": "b4488825021f12584ea3fd6e66b9b44358115bf06ee90dde530480791cbb349c",
+        "tests\\t_timing_v11.cpp": "e9eefa7945ae9a4143ecd204d23371aecd850ae8cbee667949e6593d3e186fd4",
+        "timing\\cycle_sim.cpp": "6aacc10bb9e8304b119a069194cdf0945b176bac4731f7df450b4164349e23a0",
+        "timing\\cycle_sim.hpp": "9231e6be1f62a90497b2d4d92b2e8b25a61d7069b0be485ee1bbb79018bac04c",
+        "timing\\main.cpp": "da8fff9c869ed33f0cebbed9fd9aa8c875117270de62aad46b3c9eeb7ff37447",
+        "timing\\timing_model.hpp": "ea8fa89ec9b9a3ce27814cbe9075ab0abc061036e69f83498c7330c952bf6fbf"
+      }
+    }
+  },
+  "cuda_device_comparison": "CUDA_ALIGNED_BENCHMARK.json"
+}

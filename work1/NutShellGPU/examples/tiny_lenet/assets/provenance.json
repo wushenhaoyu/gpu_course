@@ -1,0 +1,18 @@
+{
+  "source": "locally trained TinyLeNet; historical five-epoch checkpoint",
+  "parameters": 9098,
+  "official_test_indices": [
+    0,
+    1,
+    2
+  ],
+  "weights_sha256": "0f69f685ba9a936a69783de63f7b294f0061ed3ebbb5e12ab4bcf50fb5cac582",
+  "historical_training": {
+    "epochs": 5,
+    "train": 55000,
+    "validation": 5000,
+    "official_test": 10000,
+    "official_test_accuracy": 0.8606
+  },
+  "sample_policy": "first three official test images; no selection by prediction"
+}

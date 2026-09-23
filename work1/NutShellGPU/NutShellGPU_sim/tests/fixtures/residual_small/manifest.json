@@ -1,0 +1,8 @@
+{
+  "model": "residual_small",
+  "synthetic_seed": 20260917,
+  "trained": false,
+  "parameters": 238,
+  "reference": "PyTorch CPU FP32; all layers checked",
+  "input_sha256": "5b368251fac9532cbc21c67794adbc5bf62d97293738c474688b40bfae1a970b"
+}

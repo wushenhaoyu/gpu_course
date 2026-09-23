@@ -1,0 +1,306 @@
+{
+  "results": {
+    "mlp": {
+      "accuracy": 0.8829,
+      "forward_10000_seconds": 1.5726126874536275,
+      "with_argmax_10000_seconds": 1.5603973570019007,
+      "forward_estimated_10_ms": 1.5726126874536275,
+      "with_argmax_estimated_10_ms": 1.5603973570019005,
+      "selected_10_with_argmax_ms": 1.664000004529953,
+      "max_logit_error": 3.9577484130859375e-05,
+      "max_selected_layer_error_vs_sim": 0,
+      "batch": 1,
+      "hardware": {
+        "sm_count": 24,
+        "warp_size": 32,
+        "max_threads_per_sm": 1536,
+        "registers_per_sm": 65536,
+        "shared_memory_per_sm": 102400,
+        "l2_bytes": 25165824,
+        "clock_rate_khz": 2460000
+      },
+      "launches": [
+        {
+          "layer": "00_fc",
+          "grid": [
+            1,
+            1,
+            1
+          ],
+          "block": [
+            300,
+            1,
+            1
+          ],
+          "registers_per_thread": 21
+        },
+        {
+          "layer": "01_fc",
+          "grid": [
+            1,
+            1,
+            1
+          ],
+          "block": [
+            100,
+            1,
+            1
+          ],
+          "registers_per_thread": 21
+        },
+        {
+          "layer": "02_fc",
+          "grid": [
+            1,
+            1,
+            1
+          ],
+          "block": [
+            10,
+            1,
+            1
+          ],
+          "registers_per_thread": 21
+        }
+      ],
+      "device": "NVIDIA GeForce RTX 4060",
+      "timing": "CUDA Graph replay CUDA events, sum of 10000 intervals; input upload and output download excluded; forward-only and forward-plus-argmax each evaluated once per image",
+      "algorithm": "one thread per output; direct loops; no tiling/shared memory/warp reduction/Tensor Cores; FP32 FMA matching simulator; padded layout and CTA geometry copied from fixtures; compiler standard optimization retained"
+    },
+    "cnn": {
+      "accuracy": 0.9238,
+      "forward_10000_seconds": 4.987551840990782,
+      "with_argmax_10000_seconds": 4.989463233143091,
+      "forward_estimated_10_ms": 4.987551840990782,
+      "with_argmax_estimated_10_ms": 4.989463233143091,
+      "selected_10_with_argmax_ms": 4.989695996046066,
+      "max_logit_error": 1.52587890625e-05,
+      "max_selected_layer_error_vs_sim": 0,
+      "batch": 1,
+      "hardware": {
+        "sm_count": 24,
+        "warp_size": 32,
+        "max_threads_per_sm": 1536,
+        "registers_per_sm": 65536,
+        "shared_memory_per_sm": 102400,
+        "l2_bytes": 25165824,
+        "clock_rate_khz": 2460000
+      },
+      "launches": [
+        {
+          "layer": "00_conv",
+          "grid": [
+            28,
+            32,
+            1
+          ],
+          "block": [
+            28,
+            1,
+            1
+          ],
+          "registers_per_thread": 22
+        },
+        {
+          "layer": "01_pool",
+          "grid": [
+            14,
+            32,
+            1
+          ],
+          "block": [
+            14,
+            1,
+            1
+          ],
+          "registers_per_thread": 22
+        },
+        {
+          "layer": "02_conv",
+          "grid": [
+            14,
+            64,
+            1
+          ],
+          "block": [
+            14,
+            1,
+            1
+          ],
+          "registers_per_thread": 22
+        },
+        {
+          "layer": "03_pool",
+          "grid": [
+            7,
+            64,
+            1
+          ],
+          "block": [
+            7,
+            1,
+            1
+          ],
+          "registers_per_thread": 22
+        },
+        {
+          "layer": "04_fc",
+          "grid": [
+            1,
+            1,
+            1
+          ],
+          "block": [
+            128,
+            1,
+            1
+          ],
+          "registers_per_thread": 21
+        },
+        {
+          "layer": "05_fc",
+          "grid": [
+            1,
+            1,
+            1
+          ],
+          "block": [
+            10,
+            1,
+            1
+          ],
+          "registers_per_thread": 21
+        }
+      ],
+      "device": "NVIDIA GeForce RTX 4060",
+      "timing": "CUDA Graph replay CUDA events, sum of 10000 intervals; input upload and output download excluded; forward-only and forward-plus-argmax each evaluated once per image",
+      "algorithm": "one thread per output; direct loops; no tiling/shared memory/warp reduction/Tensor Cores; FP32 FMA matching simulator; padded layout and CTA geometry copied from fixtures; compiler standard optimization retained"
+    },
+    "tinyvgg": {
+      "accuracy": 0.9321,
+      "forward_10000_seconds": 6.768818235099316,
+      "with_argmax_10000_seconds": 6.779156431734562,
+      "forward_estimated_10_ms": 6.768818235099316,
+      "with_argmax_estimated_10_ms": 6.779156431734562,
+      "selected_10_with_argmax_ms": 6.815232038497925,
+      "max_logit_error": 6.67572021484375e-06,
+      "max_selected_layer_error_vs_sim": 0,
+      "batch": 1,
+      "hardware": {
+        "sm_count": 24,
+        "warp_size": 32,
+        "max_threads_per_sm": 1536,
+        "registers_per_sm": 65536,
+        "shared_memory_per_sm": 102400,
+        "l2_bytes": 25165824,
+        "clock_rate_khz": 2460000
+      },
+      "launches": [
+        {
+          "layer": "00_conv",
+          "grid": [
+            28,
+            64,
+            1
+          ],
+          "block": [
+            28,
+            1,
+            1
+          ],
+          "registers_per_thread": 22
+        },
+        {
+          "layer": "01_conv",
+          "grid": [
+            28,
+            64,
+            1
+          ],
+          "block": [
+            28,
+            1,
+            1
+          ],
+          "registers_per_thread": 22
+        },
+        {
+          "layer": "02_pool",
+          "grid": [
+            14,
+            64,
+            1
+          ],
+          "block": [
+            14,
+            1,
+            1
+          ],
+          "registers_per_thread": 22
+        },
+        {
+          "layer": "03_conv",
+          "grid": [
+            14,
+            64,
+            1
+          ],
+          "block": [
+            14,
+            1,
+            1
+          ],
+          "registers_per_thread": 22
+        },
+        {
+          "layer": "04_conv",
+          "grid": [
+            14,
+            64,
+            1
+          ],
+          "block": [
+            14,
+            1,
+            1
+          ],
+          "registers_per_thread": 22
+        },
+        {
+          "layer": "05_pool",
+          "grid": [
+            7,
+            64,
+            1
+          ],
+          "block": [
+            7,
+            1,
+            1
+          ],
+          "registers_per_thread": 22
+        },
+        {
+          "layer": "06_fc",
+          "grid": [
+            1,
+            1,
+            1
+          ],
+          "block": [
+            10,
+            1,
+            1
+          ],
+          "registers_per_thread": 21
+        }
+      ],
+      "device": "NVIDIA GeForce RTX 4060",
+      "timing": "CUDA Graph replay CUDA events, sum of 10000 intervals; input upload and output download excluded; forward-only and forward-plus-argmax each evaluated once per image",
+      "algorithm": "one thread per output; direct loops; no tiling/shared memory/warp reduction/Tensor Cores; FP32 FMA matching simulator; padded layout and CTA geometry copied from fixtures; compiler standard optimization retained"
+    }
+  },
+  "source_sha256": "f4179035be838d05cad7536dfa10a6c6fa7b26eb0c5c84821445d275f8c79c0f",
+  "test_sha256": "0a50d390457a0001415db13162e448b44c1804dc1674c1edb2a855c6cb9a97e0",
+  "scope": "Forward plus argmax GPU event time; not program wall time; hardware not equivalent"
+}

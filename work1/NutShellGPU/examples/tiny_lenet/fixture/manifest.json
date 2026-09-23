@@ -1,0 +1,17 @@
+{
+  "model": "TinyLeNet",
+  "official_test_indices": [
+    0,
+    1,
+    2
+  ],
+  "labels": [
+    9,
+    2,
+    1
+  ],
+  "trained": true,
+  "parameters": 9098,
+  "reference": "PyTorch CPU FP32; all layers checked",
+  "input_sha256": "faa357a36ec57338d890d06a7b435950653fceeee7607bb5aaa7764bc823d02d"
+}

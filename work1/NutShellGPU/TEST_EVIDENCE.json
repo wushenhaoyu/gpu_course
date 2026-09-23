@@ -1,0 +1,38 @@
+{
+  "version": "1.1.0",
+  "unit_tests": {
+    "decode": {
+      "exit_code": 0,
+      "tail": "U: GPU Hardware Emulator for Education & GPU Simulator for Education\nAuthor: Di Zhao, Trae CN\nContact: zhaodi@ucas.ac.cn\nReferences: Tor M. Aamodt, Wilson W. Lun Fung, Timothy G. Rogers, General-Purpose Graphics Processor Architecture, Morgan & Claypool, 2018\nSeptember 2026\n===== t_decode =====\n--- test_basic_vectors ---\n  17 vectors tested\n--- test_specific_vectors ---\n--- test_guard_decoding ---\n--- test_error_codes ---\n--- test_encoding_helpers ---\n\n===== Summary =====\nPassed: 141, Failed: 0\n"
+    },
+    "saxpy": {
+      "exit_code": 0,
+      "tail": "NutShellGPU: GPU Hardware Emulator for Education & GPU Simulator for Education\nAuthor: Di Zhao, Trae CN\nContact: zhaodi@ucas.ac.cn\nReferences: Tor M. Aamodt, Wilson W. Lun Fung, Timothy G. Rogers, General-Purpose Graphics Processor Architecture, Morgan & Claypool, 2018\nSeptember 2026\n===== t_saxpy =====\n--- test_saxpy_single_warp ---\n--- test_saxpy_multi_cta ---\n  Instructions: 736\n  Divergent branches: 0\n--- test_saxpy_partial_warp ---\n\n===== Summary =====\nPassed: 9, Failed: 0\n"
+    },
+    "diverge": {
+      "exit_code": 0,
+      "tail": "r Education & GPU Simulator for Education\nAuthor: Di Zhao, Trae CN\nContact: zhaodi@ucas.ac.cn\nReferences: Tor M. Aamodt, Wilson W. Lun Fung, Timothy G. Rogers, General-Purpose Graphics Processor Architecture, Morgan & Claypool, 2018\nSeptember 2026\n===== t_diverge =====\n--- test_basic_divergence ---\n--- test_nested_divergence ---\n--- test_uniform_branch ---\n--- test_notake_branch ---\n--- test_exit_tail ---\n--- test_barrier ---\n--- test_shared_memory ---\n\n===== Summary =====\nPassed: 57, Failed: 0\n"
+    },
+    "repairs": {
+      "exit_code": 0,
+      "tail": "\nPASS unaligned/cross-page u64\nPASS unaligned/cross-page u64\nPASS unaligned/cross-page u64\nPASS unaligned/cross-page u64\nPASS unaligned/cross-page u64\nPASS unaligned/cross-page u64\nPASS unaligned/cross-page u64\nPASS unaligned/cross-page u64\nPASS unaligned/cross-page u64\nPASS unaligned/cross-page u64\nPASS unaligned/cross-page u64\nPASS cross-page bulk roundtrip\nPASS lazy zero memory\nPASS CTA refill beyond residency\nPASS named second module resource metadata\nPASS SHFL BFLY source destination alias\n"
+    },
+    "runtime": {
+      "exit_code": 0,
+      "tail": "red allocation\nPASS nonzero entry\nPASS resource reclamation\nPASS reject excessive shared\nPASS reject zero grid\nPASS register residency limit\nPASS register limited CTA refill\nPASS bad PC error\nPASS cycle CTA refill/relaunch\nPASS cycle resource accounting\nPASS cycle CTA refill/relaunch\nPASS cycle resource accounting\nPASS time averaged occupancy\nPASS first warp cannot pass two-warp barrier\nPASS second warp releases barrier\nPASS two warp barrier finishes\nPASS ARRIVE WAIT followed by SYNC generation\n"
+    },
+    "timing": {
+      "exit_code": 0,
+      "tail": "s\nPASS INI simulated latency and ns conversion\nPASS multiple warps overlap in independent execution slots\nPASS writeback port contention delays ready results\nPASS finite MSHR pool creates backpressure\nPASS DRAM row hit and miss both modeled\nPASS cycle pipeline preserves SIMT divergence and reconvergence\nPASS CVTA address conversion produces no memory request\nPASS atomic add serializes updates across lanes\nPASS atomic load error propagates\nPASS invalid fixed-array configuration rejected\nFAILED 0\n"
+    },
+    "builtin": {
+      "exit_code": 0,
+      "tail": "NutShellGPU: GPU Hardware Emulator for Education & GPU Simulator for Education\nAuthor: Di Zhao, Trae CN\nContact: zhaodi@ucas.ac.cn\nReferences: Tor M. Aamodt, Wilson W. Lun Fung, Timothy G. Rogers, General-Purpose Graphics Processor Architecture, Morgan & Claypool, 2018\nSeptember 2026\n--- test_saxpy_cycle ---\n  Cycles: 14455\n  Instructions: 184\n  IPC: 0.0127292\n  SIMD efficiency: 0.956522\n  Stats written to stats.json\n--- test_stats_format ---\n\n===== Summary =====\nPassed: 10, Failed: 0\n"
+    },
+    "stats_time": {
+      "exit_code": 0,
+      "tail": "PASS 9 simulated time checks\n"
+    }
+  },
+  "public_pretrained_benchmark": "PRETRAINED_BENCHMARK.json"
+}

@@ -4,9 +4,6 @@
 # kda is maintained as an independent Git repository.
 kda/
 
-# Separate coursework repository; do not record it as an embedded submodule.
-work1/NutShellGPU/
-
 # Python build cache
 __pycache__/
 *.py[cod]
