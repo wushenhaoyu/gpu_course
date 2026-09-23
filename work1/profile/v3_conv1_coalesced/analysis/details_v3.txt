@@ -1,0 +1,162 @@
+[339489] python3.10@127.0.0.1
+  conv1_smem_kernel(const float *, const float *, const float *, float *) (10000, 1, 1)x(256, 1, 1), Context 1, Stream 7, Device 0, CC 8.0
+    Section: GPU Speed Of Light Throughput
+    ----------------------- ------------- ------------
+    Metric Name               Metric Unit Metric Value
+    ----------------------- ------------- ------------
+    DRAM Frequency          cycle/usecond       292.78
+    SM Frequency            cycle/usecond       209.29
+    Elapsed Cycles                  cycle    1,118,605
+    Memory Throughput                   %        76.31
+    DRAM Throughput                     %        17.60
+    Duration                      msecond         5.34
+    L1/TEX Cache Throughput             %        98.50
+    L2 Cache Throughput                 %        11.70
+    SM Active Cycles                cycle   866,242.27
+    Compute (SM) Throughput             %        62.78
+    ----------------------- ------------- ------------
+    OPT   Memory is more heavily utilized than Compute: Look at the Memory Workload Analysis section to identify the L1
+          bottleneck. Check memory replay (coalescing) metrics to make sure you're efficiently utilizing the bytes
+          transferred. Also consider whether it is possible to do more work per memory access (kernel fusion) or
+          whether there are values you can (re)compute.
+    Section: GPU Speed Of Light Roofline Chart
+    INF   The ratio of peak float (fp32) to double (fp64) performance on this device is 2:1. The kernel achieved 60% of
+          this device's fp32 peak performance and 0% of its fp64 peak performance. See the Kernel Profiling Guide
+          (https://docs.nvidia.com/nsight-compute/ProfilingGuide/index.html#roofline) for more details on roofline
+          analysis.
+    Section: PM Sampling
+    ------------------------- ----------- ------------
+    Metric Name               Metric Unit Metric Value
+    ------------------------- ----------- ------------
+    Maximum Buffer Size             Mbyte         4.00
+    Dropped Samples                sample            0
+    Maximum Sampling Interval       cycle       80,000
+    # Pass Groups                                    4
+    ------------------------- ----------- ------------
+    Section: Compute Workload Analysis
+    -------------------- ----------- ------------
+    Metric Name          Metric Unit Metric Value
+    -------------------- ----------- ------------
+    Executed Ipc Active   inst/cycle         2.71
+    Executed Ipc Elapsed  inst/cycle         2.10
+    Issue Slots Busy               %        67.87
+    Issued Ipc Active     inst/cycle         2.71
+    SM Busy                        %        81.04
+    -------------------- ----------- ------------
+    OPT   FMA is the highest-utilized pipeline (81.0%) based on active cycles, taking into account the rates of its
+          different instructions. It executes 32-bit floating point (FADD, FMUL, FMAD, ...) and integer (IMUL, IMAD)
+          operations. The pipeline is over-utilized and likely a performance bottleneck. Based on the number of
+          executed instructions, the highest utilized pipeline (81.0%) is FMA. It executes 32-bit floating point
+          (FADD, FMUL, FMAD, ...) and integer (IMUL, IMAD) operations. Comparing the two, the overall pipeline
+          utilization appears to be caused by frequent, low-latency instructions. See the Kernel Profiling Guide
+          (https://docs.nvidia.com/nsight-compute/ProfilingGuide/index.html#metrics-decoder) or hover over the
+          pipeline name to understand the workloads handled by each pipeline. The Instruction Statistics section shows
+          the mix of executed instructions in this kernel. Check the Warp State Statistics section for which reasons
+          cause warps to stall.
+    Section: Memory Workload Analysis
+    --------------------------- ------------ ------------
+    Metric Name                  Metric Unit Metric Value
+    --------------------------- ------------ ------------
+    Memory Throughput           Gbyte/second        65.95
+    Mem Busy                               %        76.31
+    Max Bandwidth                          %        74.45
+    L1/TEX Hit Rate                        %        12.77
+    L2 Compression Success Rate            %            0
+    L2 Compression Ratio                                0
+    L2 Hit Rate                            %        89.23
+    Mem Pipes Busy                         %        54.62
+    --------------------------- ------------ ------------
+    Section: Scheduler Statistics
+    ---------------------------- ----------- ------------
+    Metric Name                  Metric Unit Metric Value
+    ---------------------------- ----------- ------------
+    One or More Eligible                   %        67.98
+    Issued Warp Per Scheduler                        0.68
+    No Eligible                            %        32.02
+    Active Warps Per Scheduler          warp        15.30
+    Eligible Warps Per Scheduler        warp         4.88
+    ---------------------------- ----------- ------------
+    Section: Warp State Statistics
+    ---------------------------------------- ----------- ------------
+    Metric Name                              Metric Unit Metric Value
+    ---------------------------------------- ----------- ------------
+    Warp Cycles Per Issued Instruction             cycle        22.51
+    Warp Cycles Per Executed Instruction           cycle        22.52
+    Avg. Active Threads Per Warp                                31.96
+    Avg. Not Predicated Off Threads Per Warp                    31.87
+    ---------------------------------------- ----------- ------------
+    OPT   Est. Local Speedup: 34.77%
+          On average, each warp of this kernel spends 7.8 cycles being stalled waiting for the MIO (memory
+          input/output) instruction queue to be not full. This stall reason is high in cases of extreme utilization of
+          the MIO pipelines, which include special math instructions, dynamic branches, as well as shared memory
+          instructions. When caused by shared memory accesses, trying to use fewer but wider loads can reduce pipeline
+          pressure. This stall type represents about 34.8% of the total average of 22.5 cycles between issuing two
+          instructions.
+    ----- --------------------------------------------------------------------------------------------------------------
+    INF   Check the Warp Stall Sampling (All Samples) table for the top stall locations in your source based on
+          sampling data. The Kernel Profiling Guide
+          (https://docs.nvidia.com/nsight-compute/ProfilingGuide/index.html#metrics-reference) provides more details
+          on each stall reason.
+    Section: Instruction Statistics
+    ---------------------------------------- ----------- ------------
+    Metric Name                              Metric Unit Metric Value
+    ---------------------------------------- ----------- ------------
+    Avg. Executed Instructions Per Scheduler        inst   587,847.22
+    Executed Instructions                           inst  253,950,000
+    Avg. Issued Instructions Per Scheduler          inst   587,920.20
+    Issued Instructions                             inst  253,981,528
+    ---------------------------------------- ----------- ------------
+    Section: Launch Statistics
+    -------------------------------- --------------- ---------------
+    Metric Name                          Metric Unit    Metric Value
+    -------------------------------- --------------- ---------------
+    Block Size                                                   256
+    Function Cache Configuration                     CachePreferNone
+    Grid Size                                                 10,000
+    Registers Per Thread             register/thread              32
+    Shared Memory Configuration Size           Kbyte          102.40
+    Driver Shared Memory Per Block       Kbyte/block            1.02
+    Dynamic Shared Memory Per Block       byte/block               0
+    Static Shared Memory Per Block       Kbyte/block            6.46
+    # SMs                                         SM             108
+    Threads                                   thread       2,560,000
+    Uses Green Context                                             0
+    Waves Per SM                                               11.57
+    -------------------------------- --------------- ---------------
+    Section: Occupancy
+    ------------------------------- ----------- ------------
+    Metric Name                     Metric Unit Metric Value
+    ------------------------------- ----------- ------------
+    Block Limit SM                        block           32
+    Block Limit Registers                 block            8
+    Block Limit Shared Mem                block           13
+    Block Limit Warps                     block            8
+    Theoretical Active Warps per SM        warp           64
+    Theoretical Occupancy                     %          100
+    Achieved Occupancy                        %        95.52
+    Achieved Active Warps Per SM           warp        61.14
+    ------------------------------- ----------- ------------
+    Section: GPU and Memory Workload Distribution
+    -------------------------- ----------- ------------
+    Metric Name                Metric Unit Metric Value
+    -------------------------- ----------- ------------
+    Average DRAM Active Cycles       cycle      275,260
+    Total DRAM Elapsed Cycles        cycle   62,571,520
+    Average L1 Active Cycles         cycle   866,242.27
+    Total L1 Elapsed Cycles          cycle  120,768,250
+    Average L2 Active Cycles         cycle   814,944.01
+    Total L2 Elapsed Cycles          cycle   84,812,240
+    Average SM Active Cycles         cycle   866,242.27
+    Total SM Elapsed Cycles          cycle  120,768,250
+    Average SMSP Active Cycles       cycle   864,857.54
+    Total SMSP Elapsed Cycles        cycle  483,073,000
+    -------------------------- ----------- ------------
+    Section: Source Counters
+    ------------------------- ----------- ------------
+    Metric Name               Metric Unit Metric Value
+    ------------------------- ----------- ------------
+    Branch Instructions Ratio           %         0.01
+    Branch Instructions              inst    3,130,000
+    Branch Efficiency                   %        99.20
+    Avg. Divergent Branches                      46.30
+    ------------------------- ----------- ------------

@@ -1,0 +1,28 @@
+metric                                  direct_b1000      smem_c_b1000       tiled_b1000
+----------------------------------------------------------------------------------------
+Duration (ms)                                 0.1451            0.4114            0.3918
+SM Throughput (% peak)                         51.73             60.27             83.41
+Memory Throughput (% peak)                     90.98             90.58             87.02
+L1/TEX Throughput (% peak)                     90.98             90.58             87.02
+L2 Throughput (% peak)                         10.47             2.663             4.112
+DRAM Throughput (% peak)                       1.729            0.6043            0.7694
+L1 Hit Rate (%)                                96.22             8.572             84.32
+L2 Hit Rate (%)                                93.72             86.57             88.18
+Bytes/Sector (global ld)                        11.9                32             6.761
+Global-ld Sectors                          5.701e+07         1.935e+05         5.914e+06
+  of which excessive                       3.226e+07                 0           4.2e+06
+Executed Instructions                      2.938e+07         5.658e+07         9.468e+07
+Issue Slots Busy (%)                           41.25             27.97             49.14
+FMA Pipe (% of peak)                           45.26             18.86              28.9
+ALU Pipe (% of peak)                           9.485             6.506             21.67
+Registers / thread                                32                30                79
+Theoretical Occupancy (%)                        100                25              37.5
+Achieved Occupancy (%)                         85.24             23.73              36.5
+Waves / SM                                     20.83              4.63             18.52
+Warp Cycles / Issued Instr                     32.31             12.51             11.71
+Stall: lg_throttle                             19.48                 0         0.0001682
+Stall: long_scoreboard                         3.084            0.3528             0.704
+Stall: mio_throttle                            1.158             6.172             3.924
+Stall: math_pipe_throttle                     0.4016            0.0372            0.3055
+Stall: wait                                    1.309             2.202             1.946
+Stall: not_selected                              4.5             1.236             1.969

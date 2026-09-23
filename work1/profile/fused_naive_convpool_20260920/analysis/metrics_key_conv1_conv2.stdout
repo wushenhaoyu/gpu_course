@@ -1,0 +1,29 @@
+metric                                   conv1_b1000       conv2_b1000
+----------------------------------------------------------------------
+Duration (ms)                                 0.1451            0.9577
+SM Throughput (% peak)                         51.74             53.09
+Memory Throughput (% peak)                     90.99             86.97
+L1/TEX Throughput (% peak)                     90.99             86.97
+L2 Throughput (% peak)                         10.55             6.531
+DRAM Throughput (% peak)                       1.711             1.074
+L1 Hit Rate (%)                                96.21              98.1
+L2 Hit Rate (%)                                94.06             83.39
+Bytes/Sector (global ld)                        11.9             8.634
+Global-ld Sectors                          5.701e+07         2.969e+08
+  of which excessive                       3.226e+07          9.83e+07
+Executed Instructions                      2.938e+07         1.778e+08
+Issue Slots Busy (%)                           41.26             37.73
+FMA Pipe (% of peak)                           45.27             43.56
+ALU Pipe (% of peak)                           9.477             4.949
+Registers / thread                                32                31
+Theoretical Occupancy (%)                        100               100
+Achieved Occupancy (%)                         85.33             91.84
+Waves / SM                                     20.83              4.63
+Warp Cycles / Issued Instr                     32.37             38.03
+Stall: lg_throttle                             19.53             21.84
+Stall: long_scoreboard                         3.071              8.88
+Stall: mio_throttle                            1.155           0.02958
+Stall: math_pipe_throttle                     0.4035            0.3973
+Stall: wait                                     1.31             1.095
+Stall: not_selected                            4.489             4.564
+

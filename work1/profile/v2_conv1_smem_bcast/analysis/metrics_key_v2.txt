@@ -1,0 +1,28 @@
+metric                                            v2
+----------------------------------------------------
+Duration (ms)                                  1.471
+SM Throughput (% peak)                         40.34
+Memory Throughput (% peak)                     72.61
+L1/TEX Throughput (% peak)                     50.92
+L2 Throughput (% peak)                         72.61
+DRAM Throughput (% peak)                       6.768
+L1 Hit Rate (%)                                94.83
+L2 Hit Rate (%)                                97.91
+Bytes/Sector (global ld)                          32
+Global-ld Sectors                          1.945e+06
+  of which excessive                       4.032e+07
+Executed Instructions                      2.072e+08
+Issue Slots Busy (%)                           28.62
+FMA Pipe (% of peak)                           40.34
+ALU Pipe (% of peak)                           7.433
+Registers / thread                                47
+Theoretical Occupancy (%)                       62.5
+Achieved Occupancy (%)                          60.2
+Waves / SM                                     18.52
+Warp Cycles / Issued Instr                     33.32
+Stall: lg_throttle                             2.347
+Stall: long_scoreboard                         4.684
+Stall: mio_throttle                            15.55
+Stall: math_pipe_throttle                     0.8845
+Stall: wait                                    1.185
+Stall: not_selected                            1.718

@@ -1,0 +1,125 @@
+===== Stall hotspots for direct_b1000 =====
+Total distinct (file, line) entries: 18
+
+Rank      Total File                            Line  Breakdown (stall: count)
+------------------------------------------------------------------------------------------------------------------------------------------------------
+   0       5861 conv1_pool1.cu                    19  lg_throttle: 4369, not_selected: 921, mio_throttle: 260, wait: 132, dispatch_stall: 87, selected: 73, math_pipe_throttle: 19
+   1       4841 conv1_pool1.cu                    16  lg_throttle: 3660, not_selected: 859, mio_throttle: 219, dispatch_stall: 96, selected: 7
+   2       3349 conv1_pool1.cu                    23  long_scoreboard: 1904, lg_throttle: 842, wait: 186, not_selected: 164, selected: 140, mio_throttle: 59, math_pipe_throttle: 30, dispatch_stall: 24
+   3        932 conv1_pool1.cu                    21  lg_throttle: 435, not_selected: 151, wait: 140, selected: 119, math_pipe_throttle: 45, dispatch_stall: 17, mio_throttle: 15, long_scoreboard: 10
+   4        582 conv1_pool1.cu                    20  long_scoreboard: 220, lg_throttle: 143, selected: 76, wait: 63, not_selected: 45, mio_throttle: 14, math_pipe_throttle: 13, dispatch_stall: 8
+   5        505 conv1_pool1.cu                    22  lg_throttle: 203, wait: 92, selected: 90, not_selected: 50, long_scoreboard: 38, math_pipe_throttle: 16, mio_throttle: 11, dispatch_stall: 5
+   6        249 conv1_pool1.cu                    28  drain: 202, branch_resolving: 25, wait: 16, selected: 6
+   7        221 conv1_pool1.cu                     8  short_scoreboard: 154, mio_throttle: 24, not_selected: 13, wait: 12, math_pipe_throttle: 11, selected: 7
+   8        114 conv1_pool1.cu                    11  not_selected: 38, wait: 31, math_pipe_throttle: 24, selected: 15, dispatch_stall: 5, no_instructions: 1
+   9         65 conv1_pool1.cu                    27  lg_throttle: 28, wait: 26, selected: 5, mio_throttle: 2, not_selected: 2, math_pipe_throttle: 1, dispatch_stall: 1
+  10         61 conv1_pool1.cu                    12  wait: 18, not_selected: 11, selected: 11, dispatch_stall: 10, math_pipe_throttle: 9, no_instructions: 2
+  11         59 conv1_pool1.cu                    14  wait: 23, not_selected: 12, selected: 12, math_pipe_throttle: 9, dispatch_stall: 3
+  12         54 conv1_pool1.cu                    26  wait: 37, selected: 14, dispatch_stall: 3
+  13         40 conv1_pool1.cu                     9  wait: 28, selected: 7, not_selected: 3, math_pipe_throttle: 1, dispatch_stall: 1
+  14         37 conv1_pool1.cu                    10  wait: 10, dispatch_stall: 10, not_selected: 9, math_pipe_throttle: 5, selected: 3
+  15         17 conv1_pool1.cu                     6  no_instructions: 15, not_selected: 2
+  16         11 conv1_pool1.cu                    13  wait: 4, dispatch_stall: 3, selected: 3, not_selected: 1
+  17          3 conv1_pool1.cu                    15  selected: 2, dispatch_stall: 1
+
+
+===== Per-stall-type top lines =====
+
+--- long_scoreboard ---
+      1904  conv1_pool1.cu:23
+       220  conv1_pool1.cu:20
+        38  conv1_pool1.cu:22
+        10  conv1_pool1.cu:21
+
+--- short_scoreboard ---
+       154  conv1_pool1.cu:8
+
+--- wait ---
+       186  conv1_pool1.cu:23
+       140  conv1_pool1.cu:21
+       132  conv1_pool1.cu:19
+        92  conv1_pool1.cu:22
+        63  conv1_pool1.cu:20
+        37  conv1_pool1.cu:26
+        31  conv1_pool1.cu:11
+        28  conv1_pool1.cu:9
+        26  conv1_pool1.cu:27
+        23  conv1_pool1.cu:14
+
+--- math_pipe_throttle ---
+        45  conv1_pool1.cu:21
+        30  conv1_pool1.cu:23
+        24  conv1_pool1.cu:11
+        19  conv1_pool1.cu:19
+        16  conv1_pool1.cu:22
+        13  conv1_pool1.cu:20
+        11  conv1_pool1.cu:8
+         9  conv1_pool1.cu:12
+         9  conv1_pool1.cu:14
+         5  conv1_pool1.cu:10
+
+--- mio_throttle ---
+       260  conv1_pool1.cu:19
+       219  conv1_pool1.cu:16
+        59  conv1_pool1.cu:23
+        24  conv1_pool1.cu:8
+        15  conv1_pool1.cu:21
+        14  conv1_pool1.cu:20
+        11  conv1_pool1.cu:22
+         2  conv1_pool1.cu:27
+
+--- lg_throttle ---
+      4369  conv1_pool1.cu:19
+      3660  conv1_pool1.cu:16
+       842  conv1_pool1.cu:23
+       435  conv1_pool1.cu:21
+       203  conv1_pool1.cu:22
+       143  conv1_pool1.cu:20
+        28  conv1_pool1.cu:27
+
+--- not_selected ---
+       921  conv1_pool1.cu:19
+       859  conv1_pool1.cu:16
+       164  conv1_pool1.cu:23
+       151  conv1_pool1.cu:21
+        50  conv1_pool1.cu:22
+        45  conv1_pool1.cu:20
+        38  conv1_pool1.cu:11
+        13  conv1_pool1.cu:8
+        12  conv1_pool1.cu:14
+        11  conv1_pool1.cu:12
+
+--- dispatch_stall ---
+        96  conv1_pool1.cu:16
+        87  conv1_pool1.cu:19
+        24  conv1_pool1.cu:23
+        17  conv1_pool1.cu:21
+        10  conv1_pool1.cu:12
+        10  conv1_pool1.cu:10
+         8  conv1_pool1.cu:20
+         5  conv1_pool1.cu:22
+         5  conv1_pool1.cu:11
+         3  conv1_pool1.cu:13
+
+--- drain ---
+       202  conv1_pool1.cu:28
+
+--- no_instructions ---
+        15  conv1_pool1.cu:6
+         2  conv1_pool1.cu:12
+         1  conv1_pool1.cu:11
+
+--- selected ---
+       140  conv1_pool1.cu:23
+       119  conv1_pool1.cu:21
+        90  conv1_pool1.cu:22
+        76  conv1_pool1.cu:20
+        73  conv1_pool1.cu:19
+        15  conv1_pool1.cu:11
+        14  conv1_pool1.cu:26
+        12  conv1_pool1.cu:14
+        11  conv1_pool1.cu:12
+         7  conv1_pool1.cu:8
+
+--- branch_resolving ---
+        25  conv1_pool1.cu:28

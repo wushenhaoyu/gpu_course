@@ -1,0 +1,126 @@
+===== Stall hotspots for conv2_b1000 =====
+Total distinct (file, line) entries: 18
+
+Rank      Total File                            Line  Breakdown (stall: count)
+------------------------------------------------------------------------------------------------------------------------------------------------------
+   0      37729 conv2_pool2.cu                    25  long_scoreboard: 16923, lg_throttle: 15173, not_selected: 3090, wait: 1157, selected: 859, math_pipe_throttle: 331, dispatch_stall: 177, mio_throttle: 19
+   1      26799 conv2_pool2.cu                    21  lg_throttle: 21246, not_selected: 3969, wait: 847, selected: 492, dispatch_stall: 216, mio_throttle: 29
+   2      20601 conv2_pool2.cu                    22  lg_throttle: 9383, long_scoreboard: 8221, not_selected: 1936, selected: 498, wait: 275, math_pipe_throttle: 167, dispatch_stall: 113, mio_throttle: 8
+   3       9481 conv2_pool2.cu                    23  lg_throttle: 5968, not_selected: 1548, wait: 592, selected: 557, math_pipe_throttle: 389, long_scoreboard: 341, dispatch_stall: 78, mio_throttle: 8
+   4       8945 conv2_pool2.cu                    24  lg_throttle: 3465, long_scoreboard: 3356, not_selected: 892, selected: 563, wait: 370, math_pipe_throttle: 246, dispatch_stall: 49, mio_throttle: 4
+   5       7807 conv2_pool2.cu                    15  lg_throttle: 6396, not_selected: 1309, dispatch_stall: 84, wait: 9, mio_throttle: 6, selected: 2, math_pipe_throttle: 1
+   6        406 conv2_pool2.cu                     7  long_scoreboard: 107, wait: 69, selected: 68, branch_resolving: 46, no_instructions: 37, not_selected: 31, short_scoreboard: 22, math_pipe_throttle: 12, dispatch_stall: 10, mio_throttle: 4
+   7        351 conv2_pool2.cu                    16  selected: 138, wait: 124, not_selected: 54, math_pipe_throttle: 18, dispatch_stall: 17
+   8        106 conv2_pool2.cu                    29  wait: 79, selected: 22, branch_resolving: 2, dispatch_stall: 2, not_selected: 1
+   9         47 conv2_pool2.cu                    31  drain: 37, branch_resolving: 8, wait: 2
+  10         24 conv2_pool2.cu                    11  not_selected: 9, wait: 7, math_pipe_throttle: 5, selected: 2, dispatch_stall: 1
+  11         13 conv2_pool2.cu                    30  wait: 9, lg_throttle: 3, selected: 1
+  12         10 conv2_pool2.cu                     5  no_instructions: 9, not_selected: 1
+  13          9 conv2_pool2.cu                    13  not_selected: 5, math_pipe_throttle: 2, wait: 1, dispatch_stall: 1
+  14          8 conv2_pool2.cu                     8  wait: 4, selected: 2, not_selected: 1, dispatch_stall: 1
+  15          4 conv2_pool2.cu                    10  math_pipe_throttle: 2, wait: 1, selected: 1
+  16          2 conv2_pool2.cu                     9  math_pipe_throttle: 1, not_selected: 1
+  17          1 conv2_pool2.cu                    12  wait: 1
+
+
+===== Per-stall-type top lines =====
+
+--- long_scoreboard ---
+     16923  conv2_pool2.cu:25
+      8221  conv2_pool2.cu:22
+      3356  conv2_pool2.cu:24
+       341  conv2_pool2.cu:23
+       107  conv2_pool2.cu:7
+
+--- short_scoreboard ---
+        22  conv2_pool2.cu:7
+
+--- wait ---
+      1157  conv2_pool2.cu:25
+       847  conv2_pool2.cu:21
+       592  conv2_pool2.cu:23
+       370  conv2_pool2.cu:24
+       275  conv2_pool2.cu:22
+       124  conv2_pool2.cu:16
+        79  conv2_pool2.cu:29
+        69  conv2_pool2.cu:7
+         9  conv2_pool2.cu:15
+         9  conv2_pool2.cu:30
+
+--- math_pipe_throttle ---
+       389  conv2_pool2.cu:23
+       331  conv2_pool2.cu:25
+       246  conv2_pool2.cu:24
+       167  conv2_pool2.cu:22
+        18  conv2_pool2.cu:16
+        12  conv2_pool2.cu:7
+         5  conv2_pool2.cu:11
+         2  conv2_pool2.cu:10
+         2  conv2_pool2.cu:13
+         1  conv2_pool2.cu:15
+
+--- mio_throttle ---
+        29  conv2_pool2.cu:21
+        19  conv2_pool2.cu:25
+         8  conv2_pool2.cu:22
+         8  conv2_pool2.cu:23
+         6  conv2_pool2.cu:15
+         4  conv2_pool2.cu:7
+         4  conv2_pool2.cu:24
+
+--- lg_throttle ---
+     21246  conv2_pool2.cu:21
+     15173  conv2_pool2.cu:25
+      9383  conv2_pool2.cu:22
+      6396  conv2_pool2.cu:15
+      5968  conv2_pool2.cu:23
+      3465  conv2_pool2.cu:24
+         3  conv2_pool2.cu:30
+
+--- not_selected ---
+      3969  conv2_pool2.cu:21
+      3090  conv2_pool2.cu:25
+      1936  conv2_pool2.cu:22
+      1548  conv2_pool2.cu:23
+      1309  conv2_pool2.cu:15
+       892  conv2_pool2.cu:24
+        54  conv2_pool2.cu:16
+        31  conv2_pool2.cu:7
+         9  conv2_pool2.cu:11
+         5  conv2_pool2.cu:13
+
+--- dispatch_stall ---
+       216  conv2_pool2.cu:21
+       177  conv2_pool2.cu:25
+       113  conv2_pool2.cu:22
+        84  conv2_pool2.cu:15
+        78  conv2_pool2.cu:23
+        49  conv2_pool2.cu:24
+        17  conv2_pool2.cu:16
+        10  conv2_pool2.cu:7
+         2  conv2_pool2.cu:29
+         1  conv2_pool2.cu:8
+
+--- drain ---
+        37  conv2_pool2.cu:31
+
+--- no_instructions ---
+        37  conv2_pool2.cu:7
+         9  conv2_pool2.cu:5
+
+--- selected ---
+       859  conv2_pool2.cu:25
+       563  conv2_pool2.cu:24
+       557  conv2_pool2.cu:23
+       498  conv2_pool2.cu:22
+       492  conv2_pool2.cu:21
+       138  conv2_pool2.cu:16
+        68  conv2_pool2.cu:7
+        22  conv2_pool2.cu:29
+         2  conv2_pool2.cu:8
+         2  conv2_pool2.cu:11
+
+--- branch_resolving ---
+        46  conv2_pool2.cu:7
+         8  conv2_pool2.cu:31
+         2  conv2_pool2.cu:29

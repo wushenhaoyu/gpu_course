@@ -1,0 +1,33 @@
+metric                                        v1                v2                v3
+------------------------------------------------------------------------------------
+Duration (ms)                             1.9700            1.4707            5.3428
+Elapsed cycles                                 -                 -                 -
+SM Throughput %                            61.04             40.34             62.78
+L1/TEX Throughput %                        95.13             50.92             76.31
+L2 Throughput %                             7.77             72.61             11.70
+DRAM Throughput %                           5.26              6.77             17.60
+L1 Hit Rate %                              97.62             94.83             12.77
+L2 Hit Rate %                              94.40             97.91             89.23
+  global-ld sectors                  923,465,296         1,944,626         1,949,030
+  global-st sectors                    5,760,000        46,080,000         5,760,000
+  L2 rd sectors                       17,554,981         1,058,932         1,037,320
+  L2 wr sectors                        5,760,000        46,075,863         5,760,000
+  smem wavefronts                      1,440,000        28,677,131        90,104,253
+  smem bank conflicts                          0            45,548           123,400
+Bytes/Sector (gld)                         12.14             32.00             32.00
+Inst Executed (warp)                 591,840,000       207,150,000       253,950,000
+Issue Slots Busy %                         61.04             28.62             52.58
+FMA Pipe % of peak                         44.25             40.34             62.78
+ALU Pipe %                                 41.06              7.43             17.35
+Registers / thread                            40                47                32
+Shared mem / block                             0             6,464             6,464
+Theoretical Occupancy %                     75.0              62.5             100.0
+Achieved Occupancy %                       66.02             60.20             95.52
+Warp Cycles / Issued Instr                 17.23             33.32             22.51
+Stall: mio_throttle                        0.420            15.554             7.829
+Stall: long_scoreboard                     2.092             4.684             0.798
+Stall: lg_throttle                         5.404             2.347             0.000
+Stall: short_scoreboard                    0.278             3.533             0.657
+Stall: math_pipe_throttle                  1.340             0.884             2.972
+Stall: wait                                1.687             1.185             1.037
+Stall: not_selected                        3.738             1.718             6.180

@@ -1,0 +1,19 @@
+{
+  "batch": 1000,
+  "warmup": 20,
+  "reps": 100,
+  "max_abs_error": 1.6689300537109375e-06,
+  "cudnn_enabled": true,
+  "cudnn_allow_tf32": false,
+  "register_scalar": {
+    "median_ms": 0.392192006111145,
+    "min_ms": 0.3911679983139038,
+    "max_ms": 0.43724799156188965
+  },
+  "cudnn_fp32": {
+    "median_ms": 0.3112959861755371,
+    "min_ms": 0.30822399258613586,
+    "max_ms": 0.317440003156662
+  },
+  "custom_over_cudnn_speedup": 1.259868496633912
+}

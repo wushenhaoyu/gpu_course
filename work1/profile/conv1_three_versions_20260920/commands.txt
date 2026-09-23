@@ -1,0 +1,13 @@
+# Run from /data/workspace/haoyu/code/learn/gpu_course/work1/lenet5/cuda
+KPY=/data/workspace/haoyu/software/miniconda3/envs/kernel/bin/python
+export PATH=/data/workspace/haoyu/software/miniconda3/envs/kernel/bin:$PATH
+export TMPDIR=/tmp/haoyu_ncu_conv1_three_20260920
+
+ncu --set full --section PmSampling --section PmSampling_WarpStates -k regex:conv1_pool1_kernel -c 1 -o ../profile/conv1_three_versions_20260920/reports/full_direct_b1000 $KPY ../profile/conv1_three_versions_20260920/harness/profile_conv1.py --variant direct --batch 1000
+ncu --set source --section SourceCounters -k regex:conv1_pool1_kernel -c 1 -o ../profile/conv1_three_versions_20260920/reports/source_direct_b1000 $KPY ../profile/conv1_three_versions_20260920/harness/profile_conv1.py --variant direct --batch 1000
+
+ncu --set full --section PmSampling --section PmSampling_WarpStates -k regex:conv1_igemm_smem_c_pool_kernel -c 1 -o ../profile/conv1_three_versions_20260920/reports/full_smem_c_b1000 $KPY ../profile/conv1_three_versions_20260920/harness/profile_conv1.py --variant smem_c --batch 1000
+ncu --set source --section SourceCounters -k regex:conv1_igemm_smem_c_pool_kernel -c 1 -o ../profile/conv1_three_versions_20260920/reports/source_smem_c_b1000 $KPY ../profile/conv1_three_versions_20260920/harness/profile_conv1.py --variant smem_c --batch 1000
+
+ncu --set full --section PmSampling --section PmSampling_WarpStates -k regex:conv1_igemm_tiled_pool_kernel -c 1 -o ../profile/conv1_three_versions_20260920/reports/full_tiled_b1000 $KPY ../profile/conv1_three_versions_20260920/harness/profile_conv1.py --variant tiled --batch 1000
+ncu --set source --section SourceCounters -k regex:conv1_igemm_tiled_pool_kernel -c 1 -o ../profile/conv1_three_versions_20260920/reports/source_tiled_b1000 $KPY ../profile/conv1_three_versions_20260920/harness/profile_conv1.py --variant tiled --batch 1000

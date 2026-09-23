@@ -1,0 +1,137 @@
+===== Stall hotspots for conv1 =====
+Total distinct (file, line) entries: 23
+
+Rank      Total File                            Line  Breakdown (stall: count)
+------------------------------------------------------------------------------------------------------------------------------------------------------
+   0      45257 lenet_kernels.cu                  78  lg_throttle: 31680, not_selected: 10016, dispatch_stall: 1564, mio_throttle: 1301, wait: 377, selected: 159, math_pipe_throttle: 157, no_instructions: 3
+   1      31062 lenet_kernels.cu                  88  lg_throttle: 10554, long_scoreboard: 8753, not_selected: 4156, wait: 3418, selected: 1833, dispatch_stall: 1202, math_pipe_throttle: 595, mio_throttle: 551
+   2      28465 lenet_kernels.cu                  86  lg_throttle: 9984, long_scoreboard: 6461, not_selected: 4401, wait: 3319, selected: 1729, dispatch_stall: 1133, math_pipe_throttle: 898, mio_throttle: 540
+   3      20650 lenet_kernels.cu                  84  lg_throttle: 11388, not_selected: 3963, wait: 1858, dispatch_stall: 1016, selected: 933, long_scoreboard: 809, mio_throttle: 683
+   4      20055 lenet_kernels.cu                  69  not_selected: 6027, wait: 4685, math_pipe_throttle: 4097, dispatch_stall: 2002, selected: 1713, short_scoreboard: 1301, mio_throttle: 229, no_instructions: 1
+   5      19142 lenet_kernels.cu                  87  long_scoreboard: 8796, lg_throttle: 3845, not_selected: 2091, selected: 1428, wait: 1221, dispatch_stall: 853, math_pipe_throttle: 702, mio_throttle: 206
+   6      16699 lenet_kernels.cu                  85  lg_throttle: 5719, long_scoreboard: 4836, not_selected: 2383, selected: 1410, wait: 880, dispatch_stall: 770, mio_throttle: 386, math_pipe_throttle: 315
+   7      10416 lenet_kernels.cu                  67  not_selected: 3632, math_pipe_throttle: 2212, wait: 1902, dispatch_stall: 1142, selected: 778, mio_throttle: 603, short_scoreboard: 147
+   8       7232 lenet_kernels.cu                  68  not_selected: 2344, math_pipe_throttle: 1410, wait: 1113, dispatch_stall: 941, selected: 781, mio_throttle: 410, short_scoreboard: 233
+   9       6304 lenet_kernels.cu                  82  not_selected: 1752, math_pipe_throttle: 1652, selected: 1120, wait: 1117, dispatch_stall: 663
+  10       6108 lenet_kernels.cu                  79  long_scoreboard: 2045, not_selected: 1832, math_pipe_throttle: 939, wait: 484, dispatch_stall: 465, selected: 343
+  11       5842 lenet_kernels.cu                  70  not_selected: 1833, math_pipe_throttle: 1300, wait: 984, selected: 830, dispatch_stall: 807, mio_throttle: 88
+  12       4587 lenet_kernels.cu                  59  not_selected: 2107, math_pipe_throttle: 1563, dispatch_stall: 665, no_instructions: 252
+  13       3759 lenet_kernels.cu                  64  short_scoreboard: 1837, not_selected: 661, math_pipe_throttle: 424, mio_throttle: 374, wait: 193, dispatch_stall: 176, selected: 94
+  14       3419 lenet_kernels.cu                  65  not_selected: 1414, math_pipe_throttle: 910, wait: 629, dispatch_stall: 401, selected: 65
+  15       2869 lenet_kernels.cu                  95  drain: 2401, branch_resolving: 251, wait: 159, selected: 53, dispatch_stall: 5
+  16       1661 lenet_kernels.cu                  72  not_selected: 675, wait: 336, selected: 299, dispatch_stall: 240, math_pipe_throttle: 111
+  17        971 lenet_kernels.cu                  94  wait: 362, selected: 156, not_selected: 150, lg_throttle: 145, math_pipe_throttle: 88, dispatch_stall: 59, mio_throttle: 11
+  18        573 lenet_kernels.cu                  80  not_selected: 204, math_pipe_throttle: 202, wait: 102, dispatch_stall: 35, selected: 30
+  19        477 lenet_kernels.cu                  73  selected: 176, wait: 90, dispatch_stall: 89, not_selected: 78, math_pipe_throttle: 44
+  20        469 lenet_kernels.cu                  93  wait: 223, selected: 114, not_selected: 49, dispatch_stall: 44, math_pipe_throttle: 39
+  21         91 lenet_kernels.cu                  75  selected: 38, wait: 26, not_selected: 14, math_pipe_throttle: 9, dispatch_stall: 4
+  22         33 lenet_kernels.cu                  81  selected: 27, dispatch_stall: 6
+
+
+===== Per-stall-type top lines =====
+
+--- long_scoreboard ---
+      8796  lenet_kernels.cu:87
+      8753  lenet_kernels.cu:88
+      6461  lenet_kernels.cu:86
+      4836  lenet_kernels.cu:85
+      2045  lenet_kernels.cu:79
+       809  lenet_kernels.cu:84
+
+--- short_scoreboard ---
+      1837  lenet_kernels.cu:64
+      1301  lenet_kernels.cu:69
+       233  lenet_kernels.cu:68
+       147  lenet_kernels.cu:67
+
+--- wait ---
+      4685  lenet_kernels.cu:69
+      3418  lenet_kernels.cu:88
+      3319  lenet_kernels.cu:86
+      1902  lenet_kernels.cu:67
+      1858  lenet_kernels.cu:84
+      1221  lenet_kernels.cu:87
+      1117  lenet_kernels.cu:82
+      1113  lenet_kernels.cu:68
+       984  lenet_kernels.cu:70
+       880  lenet_kernels.cu:85
+
+--- math_pipe_throttle ---
+      4097  lenet_kernels.cu:69
+      2212  lenet_kernels.cu:67
+      1652  lenet_kernels.cu:82
+      1563  lenet_kernels.cu:59
+      1410  lenet_kernels.cu:68
+      1300  lenet_kernels.cu:70
+       939  lenet_kernels.cu:79
+       910  lenet_kernels.cu:65
+       898  lenet_kernels.cu:86
+       702  lenet_kernels.cu:87
+
+--- mio_throttle ---
+      1301  lenet_kernels.cu:78
+       683  lenet_kernels.cu:84
+       603  lenet_kernels.cu:67
+       551  lenet_kernels.cu:88
+       540  lenet_kernels.cu:86
+       410  lenet_kernels.cu:68
+       386  lenet_kernels.cu:85
+       374  lenet_kernels.cu:64
+       229  lenet_kernels.cu:69
+       206  lenet_kernels.cu:87
+
+--- lg_throttle ---
+     31680  lenet_kernels.cu:78
+     11388  lenet_kernels.cu:84
+     10554  lenet_kernels.cu:88
+      9984  lenet_kernels.cu:86
+      5719  lenet_kernels.cu:85
+      3845  lenet_kernels.cu:87
+       145  lenet_kernels.cu:94
+
+--- not_selected ---
+     10016  lenet_kernels.cu:78
+      6027  lenet_kernels.cu:69
+      4401  lenet_kernels.cu:86
+      4156  lenet_kernels.cu:88
+      3963  lenet_kernels.cu:84
+      3632  lenet_kernels.cu:67
+      2383  lenet_kernels.cu:85
+      2344  lenet_kernels.cu:68
+      2107  lenet_kernels.cu:59
+      2091  lenet_kernels.cu:87
+
+--- dispatch_stall ---
+      2002  lenet_kernels.cu:69
+      1564  lenet_kernels.cu:78
+      1202  lenet_kernels.cu:88
+      1142  lenet_kernels.cu:67
+      1133  lenet_kernels.cu:86
+      1016  lenet_kernels.cu:84
+       941  lenet_kernels.cu:68
+       853  lenet_kernels.cu:87
+       807  lenet_kernels.cu:70
+       770  lenet_kernels.cu:85
+
+--- drain ---
+      2401  lenet_kernels.cu:95
+
+--- no_instructions ---
+       252  lenet_kernels.cu:59
+         3  lenet_kernels.cu:78
+         1  lenet_kernels.cu:69
+
+--- selected ---
+      1833  lenet_kernels.cu:88
+      1729  lenet_kernels.cu:86
+      1713  lenet_kernels.cu:69
+      1428  lenet_kernels.cu:87
+      1410  lenet_kernels.cu:85
+      1120  lenet_kernels.cu:82
+       933  lenet_kernels.cu:84
+       830  lenet_kernels.cu:70
+       781  lenet_kernels.cu:68
+       778  lenet_kernels.cu:67
+
+--- branch_resolving ---
+       251  lenet_kernels.cu:95
